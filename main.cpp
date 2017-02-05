@@ -14,7 +14,7 @@ Game* game;
 void initGame()
 {
 	game = new Game(&icatGame);
-	game->initLevel(2);
+	game->initLevel(3);
 
     /*Entity *e = icatGame.createEntity("./assets/IcatIM.png");
     e->setPosition(glm::vec3(6.4f, 3.6f, 0.0f));

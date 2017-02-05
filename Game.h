@@ -24,7 +24,7 @@ private:
 	Scene* currentGameScene;
 	Player* player;
 
-	b2Vec2 gravity{ 0.0f, -10.0f };
+	b2Vec2 gravity{ 0.0f, -2.0f };
 	b2World *worldPtr;
 
 };

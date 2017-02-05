@@ -30,7 +30,7 @@ void ModelLoader::createBasicShader() {
 }
 
 TexturedModel* ModelLoader::createTexturedQuad(float width, float height, Material* MaterialPtr) {
-	float halfWidth = width / 20.0f, halfHeight = height / 20.0f;
+	float halfWidth = width / 200.0f, halfHeight = height / 200.0f;
 	std::vector<float> positions;
 	std::vector<float> uv;
 	std::vector<int> indices;

@@ -32,17 +32,21 @@ void Game::update() {
 
 void Game::updateKeyEvents() {
 	if (UserInteraction::rightDown) {
-        if (!UserInteraction::spacePress)
+        player->runRight();
+        /*if (!UserInteraction::spacePress)
             player->runRight();
         else
-            player->turnRight();
+            player->turnRight();*/
     }
 	if (UserInteraction::leftDown) {
-        if (!UserInteraction::spacePress)
+        player->runLeft();
+        /*if (!UserInteraction::spacePress)
             player->runLeft();
         else
-            player->turnLeft();
+            player->turnLeft();*/
     }
-    if (UserInteraction::spacePress)
-		player->jump();
+    if (UserInteraction::spacePress) {
+        player->jump();
+        UserInteraction::spacePress = false;
+    }
 }

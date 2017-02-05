@@ -13,10 +13,6 @@ public:
 
 	void update(float deltaTime);
 
-	void turnRight();
-
-	void turnLeft();
-
 private:
 	void updatePhysics();
 

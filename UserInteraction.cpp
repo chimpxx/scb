@@ -3,6 +3,7 @@
 //
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include <iostream>
 #include "UserInteraction.h"
 
 bool UserInteraction::leftDown = false;
@@ -45,8 +46,10 @@ void UserInteraction::keyEvent(GLFWwindow* window, int key, int scancode, int ac
 {
 	bool keyPress = false;
 	bool keyDown = false;
-	if (action == GLFW_PRESS)
-		keyPress = true;
+	if (action == GLFW_PRESS) {
+        keyPress = true;
+        std::cout<<"Space"<<std::endl;
+    }
 	if (action == GLFW_PRESS || action == GLFW_REPEAT)
 		keyDown = true;
 

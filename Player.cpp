@@ -31,31 +31,23 @@ void Player::updatePhysics() {
 }
 
 void Player::runRight() {
-	b2Direction = box2DBody->GetLinearVelocity();
-	b2Direction.x = speed;
+	/*b2Direction = box2DBody->GetLinearVelocity();
+	b2Direction.x = speed;*/
 	
 	//box2DBody->ApplyForce(b2Vec2(10.f, 0.0f), box2DBody->GetWorldCenter(), true);
-    box2DBody->SetLinearVelocity(b2Vec2(5.0f, 0.0f));
+    box2DBody->ApplyLinearImpulse(b2Vec2(0.004f, 0.0f), box2DBody->GetWorldCenter(), true);
 }
 
 void Player::runLeft() {
-	b2Direction = box2DBody->GetLinearVelocity();
-    b2Direction.x = -speed;
+	/*b2Direction = box2DBody->GetLinearVelocity();
+    b2Direction.x = -speed;*/
 
     //box2DBody->ApplyForce(b2Vec2(-10.f, 0.0f), box2DBody->GetWorldCenter(), true);
-    box2DBody->SetLinearVelocity(b2Vec2(-5.0f, 0.0f));
+    box2DBody->ApplyLinearImpulse(b2Vec2(-0.004f, 0.0f), box2DBody->GetWorldCenter(), true);
 }
 
 void Player::jump() {
 
     //box2DBody->ApplyForce(b2Vec2(0.0f, 50.0f), box2DBody->GetWorldCenter(), true);
-    box2DBody->SetLinearVelocity(b2Vec2(0.0f, 5.0f));
-}
-
-void Player::turnRight() {
-    box2DBody->ApplyForceToCenter(b2Vec2(5.0f, 0.0f), true);
-}
-
-void Player::turnLeft() {
-    box2DBody->ApplyForceToCenter(b2Vec2(-5.0f, 0.0f), true);
+    box2DBody->ApplyForceToCenter(b2Vec2(0.0f, 0.60f), true);
 }

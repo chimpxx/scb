@@ -28,7 +28,7 @@ b2Body* LevelLoader::createStaticBody(float x, float y) {
 	b2Body* staticBody = currentWorldPtr->CreateBody(&bodyDef);
 
 	b2PolygonShape boxShape;
-	boxShape.SetAsBox(2.0f, 2.0f);
+	boxShape.SetAsBox(0.20f, 0.20f);
 
 	b2FixtureDef boxFixtureDef;
 	boxFixtureDef.shape = &boxShape;
@@ -50,7 +50,7 @@ b2Body* LevelLoader::createDynamicBody(float x, float y) {
 	b2Body* dynamicBody = currentWorldPtr->CreateBody(&bodyDef);
 
 	b2PolygonShape boxShape;
-	boxShape.SetAsBox(1.0f, 1.0f);
+	boxShape.SetAsBox(0.10f, 0.10f);
 
 	b2FixtureDef boxFixtureDef;
 	boxFixtureDef.shape = &boxShape;
@@ -88,8 +88,8 @@ Player* LevelLoader::createPlayer(const glm::vec3& position) {
 
 Scene* LevelLoader::createScene(std::string levelData){
 	Scene* scene = new Scene();
-    glm::vec3 position(2.f, 74.f, 0);
-	float offset = 4.f;
+    glm::vec3 position(0.2f, 7.4f, 0);
+	float offset = 0.4f;
 	for (char ch : levelData){
 		switch (ch){
 		case '0':
@@ -108,7 +108,7 @@ Scene* LevelLoader::createScene(std::string levelData){
 			position.x += offset;
 			break;
 		case '\n':
-			position.x = 2.f;
+			position.x = 0.2f;
 			position.y -= offset;
 			break;
 		}
